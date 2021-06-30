@@ -29,4 +29,16 @@ class JobsViewModel : ViewModel() {
                 }
         }
     }
+
+    private val _navigateToDetailFragment = MutableLiveData<JobResponse.Data?>()
+    val navigateToDetailFragment: MutableLiveData<JobResponse.Data?>
+        get() = _navigateToDetailFragment
+
+    fun onJobClicked(job: JobResponse.Data) {
+        _navigateToDetailFragment.value = job
+    }
+
+    fun onJobNavigated() {
+        _navigateToDetailFragment.value = null
+    }
 }

@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="job"
             type="me.shohag.bdjobstest1.model.JobResponse.Data" />
@@ -13,17 +14,113 @@
             type="me.shohag.bdjobstest1.main.JobListener" />
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardview"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:elevation="8dp"
+        isFeatured="@{job.isFeatured}"
+        app:cardBackgroundColor="@color/white"
+        app:cardElevation="4dp">
 
-        <TextView
-            android:layout_width="0dp"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:text="job_title"
-            android:text="@{job.jobTitle}"/>
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            android:onClick="@{()->clickListener.onClick(job)}"
+            android:padding="16dp">
+
+            <ImageView
+                android:id="@+id/logo"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                loadImg="@{job.logo}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/title"
+                android:contentDescription="@string/logo" />
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@{job.jobTitle}"
+                android:textColor="@color/design_default_color_primary"
+                app:layout_constraintEnd_toStartOf="@+id/logo"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="job_title" />
+
+            <TextView
+                android:id="@+id/company"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@{job.company}"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toStartOf="@+id/logo"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/title"
+                tools:text="Company" />
+
+            <TextView
+                android:id="@+id/deadline_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/deadline"
+                app:layout_constraintStart_toStartOf="@+id/company"
+                app:layout_constraintTop_toBottomOf="@+id/company" />
+
+            <TextView
+                android:id="@+id/deadline_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{job.jobDetails.lastDate}"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="@+id/deadline_label"
+                app:layout_constraintTop_toBottomOf="@+id/deadline_label"
+                tools:text="1st June, 2021" />
+
+            <TextView
+                android:id="@+id/experience_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/experience"
+                app:layout_constraintBaseline_toBaselineOf="@+id/deadline_label"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.75"
+                app:layout_constraintStart_toEndOf="@+id/deadline_label" />
+
+            <TextView
+                android:id="@+id/experience_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                setExperience="@{job}"
+                app:layout_constraintStart_toStartOf="@+id/experience_label"
+                app:layout_constraintTop_toBottomOf="@+id/experience_label"
+                android:text="@string/na" />
+
+
+            <TextView
+                android:id="@+id/salary_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/salary"
+                android:layout_marginTop="8dp"
+                app:layout_constraintStart_toStartOf="@+id/deadline_text"
+                app:layout_constraintTop_toBottomOf="@+id/deadline_text" />
+
+            <TextView
+                android:id="@+id/salary_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                salaryRange="@{job}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/salary_label"
+                app:layout_constraintTop_toBottomOf="@+id/salary_label"
+                android:text="@string/negotiable" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
 </layout>

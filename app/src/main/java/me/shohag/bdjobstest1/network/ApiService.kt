@@ -1,6 +1,5 @@
 package me.shohag.bdjobstest1.network
 
-import me.shohag.bdjobstest1.Constants
 import me.shohag.bdjobstest1.model.JobResponse
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory

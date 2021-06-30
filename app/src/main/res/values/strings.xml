@@ -1,5 +1,12 @@
 <resources>
-    <string name="app_name">BD Jobs Test1</string>
-    <!-- TODO: Remove or change this placeholder text -->
+    <string name="app_name">BD Jobs TestOne</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="deadline">Deadline</string>
+    <string name="experience">Experience</string>
+    <string name="salary">Salary</string>
+    <string name="logo">logo</string>
+    <string name="salary_range">%s to %s ৳</string>
+    <string name="negotiable">Negotiable</string>
+    <string name="na">NA</string>
+    <string name="experience_range">%d to %d year(s)</string>
 </resources>
