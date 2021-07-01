@@ -40,6 +40,14 @@ class JobsFragment : Fragment() {
             }
         })
 
+        viewModel.progressbarStatus.observe(viewLifecycleOwner, {
+            it?.let { isLoaded ->
+                if (isLoaded) {
+                    binding.progressBar.visibility = View.GONE
+                }
+            }
+        })
+
         return binding.root
     }
 

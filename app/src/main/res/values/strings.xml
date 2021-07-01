@@ -9,4 +9,5 @@
     <string name="negotiable">Negotiable</string>
     <string name="na">NA</string>
     <string name="experience_range">%d to %d year(s)</string>
+    <string name="instruction">Instruction:</string>
 </resources>

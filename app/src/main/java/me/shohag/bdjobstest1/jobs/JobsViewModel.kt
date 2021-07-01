@@ -16,8 +16,13 @@ class JobsViewModel : ViewModel() {
     val jobs: LiveData<JobResponse>
         get() = _jobs
 
+    private val _progressbarStatus = MutableLiveData<Boolean>()
+    val progressbarStatus: LiveData<Boolean>
+        get() = _progressbarStatus
+
     init {
         getJobs()
+        _progressbarStatus.value = false
     }
 
     private fun getJobs() {
@@ -26,6 +31,7 @@ class JobsViewModel : ViewModel() {
                 .catch { }
                 .collect { jobs ->
                     _jobs.value = jobs
+                    _progressbarStatus.value = true
                 }
         }
     }

@@ -1,5 +1,6 @@
 package me.shohag.bdjobstest1.utils
 
+import android.text.Html
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.cardview.widget.CardView
@@ -80,5 +81,12 @@ fun bindSalaryRange(textView: TextView, job: JobResponse.Data?) {
         } else {
             textView.text = context.getString(R.string.negotiable)
         }
+    }
+}
+
+@BindingAdapter("loadHtmlTxt")
+fun bindConvertTextToHtml(textView: TextView, text: String?) {
+    if (text != null) {
+        textView.text =  Html.fromHtml(text, Html.FROM_HTML_MODE_COMPACT)
     }
 }
