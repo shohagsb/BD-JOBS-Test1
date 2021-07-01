@@ -9,5 +9,8 @@
  
 GET API: http://corporate3.bdjobs.com/interviewtest/InterviewJson.json
 
-<b> Main Screen </b>
-<img src="scn_shot/01.jpeg" alt="Girl in a jacket" width="500" height="600">
+<b> Main Job List Screen </b><br>
+<img src="scn_shot/01.jpeg" alt="Job Lit Screen" width="500" height="600">
+<br>
+<b> Job Detail Screen </b><br>
+<img src="scn_shot/02.jpeg" alt="Job Detail Screen" width="500" height="600">
