@@ -8,3 +8,6 @@
 4. 	If “isFeatured” is true, highlight the item.
  
 GET API: http://corporate3.bdjobs.com/interviewtest/InterviewJson.json
+
+<b> Main Screen </b>
+<img src="scn_shot/01.jpeg" alt="Girl in a jacket" width="500" height="600">
