@@ -1,4 +1,4 @@
-# BD-JOBS-Test1
+# BD-JOBS- Posts
 
 <b>Q1: Implement the given API in Android Framework using Kotlin language (Encourage to implement in MVVM design pattern) - you can design the UI as you wish, following these requirements.</b>
  
